@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Personal Site</title>
+  <meta name="description" content="Simple, fast personal website built for GitHub Pages." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7c3aed}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,#071023 0%, #081225 60%);color:#e6eef6}
+    .wrap{max-width:980px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),#2dd4bf);border-radius:12px;display:grid;place-items:center;font-weight:700}
+    h1{margin:0;font-size:clamp(1.6rem,3.5vw,2.6rem)}
+    p.lead{color:var(--muted);margin:8px 0 0}
+    nav{display:flex;gap:10px}
+    a.btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:inherit;text-decoration:none;font-size:0.95rem}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:28px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+    .project{padding:14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border:1px solid rgba(255,255,255,0.03)}
+    footer{margin-top:28px;color:var(--muted);font-size:0.9rem;display:flex;justify-content:space-between;align-items:center}
+    .social{display:flex;gap:12px}
+    .contact-form{display:flex;flex-direction:column;gap:8px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
+    button.primary{background:linear-gradient(90deg,var(--accent),#06b6d4);border:none;padding:10px 14px;border-radius:10px;color:#022;cursor:pointer}
+    @media (max-width:880px){.hero{grid-template-columns:1fr;}.logo{width:48px;height:48px}.brand h1{font-size:1.3rem}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">YN</div>
+        <div>
+          <h1 id="title">Your Name</h1>
+          <p class="lead" id="subtitle">Analog engineer • student • tinkerer</p>
+        </div>
+      </div>
+      <nav>
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h2>Hi — I'm <span id="hero-name">Your Name</span>.</h2>
+          <p style="color:var(--muted)" id="hero-sub">I design low-noise analog circuits, build hobby projects, and occasionally write about engineering. This simple GitHub Pages template is ready to go — drop it into a repository named <code>YOURUSERNAME.github.io</code> and push it to the main branch.</p>
+          <div class="projects" style="margin-top:16px">
+            <div class="project">
+              <strong>Project A</strong>
+              <p style="color:var(--muted);margin:8px 0 0">Short description of a circuit or repo. Link-friendly and humble.</p>
+            </div>
+            <div class="project">
+              <strong>Project B</strong>
+              <p style="color:var(--muted);margin:8px 0 0">Another neat project (e.g. PCB + firmware).</p>
+            </div>
+            <div class="project">
+              <strong>Blog</strong>
+              <p style="color:var(--muted);margin:8px 0 0">Notes on experiments and measurements.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:10px;margin-top:16px">
+            <a class="btn" href="#projects">See projects</a>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Quick setup</h3>
+          <ol style="color:var(--muted);padding-left:18px">
+            <li>Create a repo named <code>YOURUSERNAME.github.io</code>.</li>
+            <li>Place this file as <code>index.html</code> at the repository root.</li>
+            <li>Push to the main branch — GitHub Pages will publish it at <code>https://YOURUSERNAME.github.io</code>.</li>
+          </ol>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>Contact</h3>
+          <p style="color:var(--muted);margin-top:6px">Send me a quick message — no long form required.</p>
+          <form id="contact" class="contact-form" onsubmit="event.preventDefault();alert('Thanks — message simulated! Replace form action with a real backend or mailto link.');">
+            <input type="text" id="name" placeholder="Your name" required>
+            <input type="email" id="email" placeholder="you@example.com" required>
+            <textarea id="message" rows="4" placeholder="Short message" required></textarea>
+            <button class="primary" type="submit">Send</button>
+          </form>
+        </div>
+
+        <div class="card" style="margin-top:12px;text-align:center">
+          <p style="margin:0;color:var(--muted)">Social</p>
+          <div class="social" style="justify-content:center;margin-top:8px">
+            <a class="btn" href="#">GitHub</a>
+            <a class="btn" href="#">LinkedIn</a>
+            <a class="btn" href="#">Twitter</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div>Made with ☕ and a pinch of solder.</div>
+      <div style="color:var(--muted)">© <span id="year"></span> Your Name</div>
+    </footer>
+  </div>
+
+  <script>
+    // small helpers to personalize quickly
+    const site = {
+      name: 'Your Name',
+      subtitle: 'Analog engineer • student • tinkerer',
+      projects: [
+        {title:'Low-noise amplifier',desc:'Design notes and measurements.'},
+        {title:'FPGA project',desc:'Small softcore + tools.'}
+      ]
+    }
+    document.getElementById('title').innerText = site.name
+    document.getElementById('hero-name').innerText = site.name
+    document.getElementById('subtitle').innerText = site.subtitle
+    document.getElementById('hero-sub').innerText = 'I design low-noise analog circuits, build hobby projects, and occasionally write about engineering.'
+    document.getElementById('year').innerText = new Date().getFullYear()
+
+    // optional: quick copy-to-clipboard trick for the repo name
+    window.addEventListener('keydown', e => {
+      if (e.ctrlKey && e.key === 'k') {
+        navigator.clipboard?.writeText((location.hostname.split('.')[0]||'yourusername') + '.github.io')
+        alert('Copied a suggested repo name to clipboard — tweak as needed.')
+      }
+    })
+  </script>
+</body>
+</html>
